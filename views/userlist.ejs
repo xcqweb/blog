@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>管理员列表</title>
+		<link rel="stylesheet" type="text/css" href="images/index.css"/>
+		<link rel="shortcut icon" href="images/manageIcon.png"/>
+		<script src="scripts/jquery.js"></script>
+		<script src="scripts/jquery.tmpl.js"></script>
+		<script src="/admin/loginState.html"></script>
+		<script src="/admin/checkAdmin.html"></script>
+		<style type="text/css">
+			table{
+				width: 1000px;
+				border-collapse: collapse;
+				font-size: 14px;
+				margin: 10px 0px 0px 10px;
+			}
+			
+			th{
+				background-color: #DAF1F9;
+				padding: 4px 6px;
+			}
+			
+			table td,th{
+				border: solid 1px #ccc;
+				padding-right: 5px;
+				height: 30px;
+				text-align: center;
+				font-family: "微软雅黑";
+			}
+			
+			table td a{
+				text-decoration: none;
+				color: black;
+				margin-left: 10px;
+			}
+			
+			.tdcenter{
+				text-align: center;
+			}
+			
+			.td100{
+				width: 130px;
+			}
+			#btnsave{
+				width: 80px;
+				background-color: darkorange;
+				color: white;
+				border:solid 1px #FF8C00;
+				height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>网站后台管理系统</h1>
+			<p>
+				<a href="/admin"><span class="icon home"></span>系统首页</a>
+				<span class="icon quit"><a href="./logout.html">安全退出</a></span>
+			</p>
+		</header>
+		<section>
+			<script src="scripts/menu.js"></script>
+		<table cellpadding="0" cellspacing="0">
+			<tr><th colspan="4" style="color: #FF6600; font-size: 18px; font-weight: bold;">管理员列表</th></tr>
+			<tr>
+				<th class="tdcenter td100">用户名</th>
+				<th class="tdcenter td100">角色</th>
+				<th class="tdcenter td100">序号</th>
+				<th class="tdcenter td100">操作</th>
+			</tr>
+			<%for(var i=0; i<data.length; ++i){%>
+			<tr>
+				<td><%=data[i].username%></td>
+				<td class="tdcenter"><%=data[i].role%></td>
+				<td class="tdcenter"><%=data[i].sort%></td>
+				<td>
+					<a href="edit_u.html?id=<%=data[i]._id%>">修改</a>
+					<a href="delete_u.html?id=<%=data[i]._id%>">删除</a>
+				</td>
+			</tr>
+			<%}%>
+		</table>	
+	</section>	
+	</body>
+</html>

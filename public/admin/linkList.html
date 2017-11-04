@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>友情链接列表</title>
+		<link rel="stylesheet" type="text/css" href="images/index.css"/>
+		<link rel="shortcut icon" href="images/manageIcon.png"/>
+		<script src="scripts/jquery.js"></script>
+		<script src="scripts/jquery.tmpl.js"></script>
+		<script src="/admin/loginState.html"></script>
+		<style type="text/css">
+			table{
+				width: 1130px;
+				border-collapse: collapse;
+				font-size: 14px;
+				margin: 10px 0px 0px 10px;
+			}
+			
+			th{
+				background-color: #DAF1F9;
+				padding: 4px 6px;
+			}
+			
+			table td,th{
+				border: solid 1px #ccc;
+				padding-right: 5px;
+				height: 30px;
+				text-align: center;
+				font-family: "微软雅黑";
+			}
+			
+			table td a{
+				text-decoration: none;
+				color: black;
+				margin-left: 10px;
+			}
+			
+			.tdcenter{
+				text-align: center;
+			}
+			
+			.td100{
+				width: 200px;
+			}
+			#btnsave{
+				width: 80px;
+				background-color: darkorange;
+				color: white;
+				border:solid 1px #FF8C00;
+				height: 20px;
+			}
+			
+			#page
+			{
+				width: 1000px;
+				margin-top: 30px;
+				padding-bottom: 100px;
+				position: relative;
+				left: 50%;
+				margin-left: -250px;
+			}
+			
+			#page li
+			{
+				list-style: none;
+				width: 36px;
+				height: 36px;
+				text-align: center;
+				color: #337AB7;
+				line-height: 36px;
+				margin-left: 10px;
+				border: 1px solid #ccc;
+				float: left;
+				border-radius: 4px;
+			}
+			
+			#page li a
+			{
+				color: #337AB7;
+				font-size: 16px;
+			}
+			
+			#page .current
+			{
+				background-color: #337AB7;
+			}
+			
+			#page .current a
+			{
+				color: #fff;
+			}
+			
+			#page .upPage
+			{
+				width: 90px;
+			}
+			
+			#page .downPage
+			{
+				width: 90px;
+			}
+			
+			.con_m
+			{
+				max-width: 320px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>网站后台管理系统</h1>
+			<p>
+				<a href="/admin"><span class="icon home"></span>系统首页</a>
+				<span class="icon quit"><a href="./logout.html">安全退出</a></span>
+			</p>
+		</header>
+		<section>
+			<script src="scripts/menu.js"></script>
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<th colspan="4" style="color: #FF6600; font-size: 18px; font-weight: bold;">友情链接列表</th>
+				<th>
+					<input type="button" id="del_link" value="删除" style="background: #00AA00; font-size: 16px; color: #fff; width: 120px; height: 32px; border: none;"/>
+				</th>
+			</tr>
+			<tr>
+				</th><th class="tdcenter td100">名称</th>
+				</th><th class="tdcenter" style="width: 360px;">链接</th>
+				<th class="tdcenter td100">时间</th>
+				<th class="tdcenter td100">序号</th>
+				<th style="width:60px;">全选/取消<input type="checkbox" id="checkAll"/>
+			</tr>
+			<tbody id="list"></tbody>				
+		</table>	
+	</section>
+	<!--分页-->
+	<ul id="page"></ul>
+	<script id="tmpl" type="text/html">
+		<tr>
+			<td class="con_m">{{= namer}}</td>
+			<td class="con_m">{{= links}}</td>
+			<td class="tdcenter">{{= ltime}}</td>
+			<td class="tdcenter">{{= sort}}</td>
+			<td><input type="checkbox" value="{{= _id}}" /></td>
+		</tr>
+	</script>
+	<script>
+		
+		showlist();
+		
+		function showlist(){
+			
+			ajax({
+				url:"/admin/linkList_m.html",
+				dataType:"json",
+				type:"get",
+				ok:function(data){
+					$("#list").html($("#tmpl").tmpl(data)); //渲染模板
+				}
+			});
+		}
+		
+		//删除留言
+		$("#del_link").click(function(){
+			var oinput = $("input[type=checkbox]:not('#checkAll')");
+			var ids=[];
+			for(var i in oinput){
+				if(oinput[i].checked){
+					ids.push(oinput[i].value);
+				}
+			}
+			
+			console.log(ids);
+			if(ids.length===0){
+				alert("请选择要删除的数据!");
+			}else{
+				if(confirm("确定要删除吗?")){
+						ajax({
+						url:"/admin/delete_link.html",
+						type:"post",
+						data:"ids="+ids,
+						dataType:"json",
+						ok:function(data){
+							alert(data.msg);
+							location.href='/admin/linkList.html';
+						}
+					});
+				}
+			}
+			
+		});
+		
+		//全选和取消全选
+		$("#checkAll").click(function(){
+			var isCkeck = $(this).prop("checked");
+			//找到处全选框之外的所有多选框
+			$("input[type=checkbox]:not('#checkAll')").prop("checked",isCkeck);
+		});
+	</script>
+	</body>
+</html>

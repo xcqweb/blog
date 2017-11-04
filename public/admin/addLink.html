@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新增管理员</title>
+		<link rel="shortcut icon" href="images/manageIcon.png"/>
+		<link rel="stylesheet" type="text/css" href="images/index.css"/>
+		<script src="scripts/jquery.js"></script>
+		<script src="/admin/loginState.html"></script>
+		<script src="/admin/checkAdmin.html"></script>
+		<style type="text/css">
+			table
+			{
+				width: 1130px;
+				border-collapse: collapse;
+				border: 1px solid #ccc;
+				margin-top: 20px;
+			}
+			
+			table th
+			{
+				background-color: #DAF1F9;
+				padding: 4px 6px;
+			}
+			
+			tr input
+			{
+				border: none;
+				width: 550px;
+				height: 29px;
+			}
+			
+			.namer,.sort,.name
+			{
+				width: 300px;
+			}
+			
+			input[type=submit]
+			{
+				background-color: #FF6600;
+				border: none;
+				padding: 6px 10px;
+				color: #fff;
+				font-size: 16px;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>网站后台管理系统</h1>
+			<p>
+				<a href="/admin"><span class="icon home"></span>系统首页</a>
+				<span class="icon quit"><a href="./logout.html">安全退出</a></span>
+			</p>
+		</header>
+		<section>
+			<script src="scripts/menu.js"></script>
+		<form action="/admin/add_friendLink.html" method="post">
+			<table border="" cellspacing="" cellpadding="">
+				<tr><th colspan="4" style="color: #FF6600;">新增友情链接</th></tr>
+				<tr>
+					<th>名称</th>
+					<th>链接</th>
+					<th>序号</th>
+				</tr>
+				<tr>
+					<td><input type="text" class="namer" name="namer"/></td>
+					<td><input type="text" name="links"/></td>
+					<td><input type="number" class="sort" name="sort"/></td>
+				</tr>
+			</table>
+			<p><input type="submit" value="保存"/></p>
+		</form>
+	</section>
+	</body>
+</html>

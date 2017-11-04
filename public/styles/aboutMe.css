@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+#meNav
+{
+	margin: 0px;
+}
+
+#about
+{
+	width: 900px;
+	float: left;
+}
+
+#about h1
+{
+	padding: 10px 0px 10px 10px;
+}
+
+#about .content
+{
+	padding: 10px;
+}
+
+#about .content img
+{
+	float: left;
+	margin-right: 30px;
+}
+
+#about p
+{
+	text-indent: 2em;
+	margin-right: 30px;
+}
+
+#contentSlide
+{
+	width: 300px;
+	float: right;
+/*	height: 300px;*/
+	background-color: #FF6600;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文章分类</title>
+		<link rel="stylesheet" type="text/css" href="images/index.css"/>
+		<link rel="shortcut icon" href="images/manageIcon.png"/>
+		<script src="scripts/jquery.js"></script>
+		<script src="/admin/loginState.html"></script>
+		
+		<style type="text/css">
+			table
+			{
+				width: 1000px;
+				margin-top: 20px;
+				border-collapse: collapse;
+				border: 1px solid #CCC;
+			}
+			
+			th
+			{
+				font-weight: 500;
+				padding: 4px 6px;
+				font-size: 16px;
+				background-color: #DAF1F9;
+			}
+			
+			th.current
+			{
+				background-color: #0055AA;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>网站后台管理系统</h1>
+			<p>
+				<a href="/admin"><span class="icon home"></span>系统首页</a>
+				<span class="icon quit"><a href="./logout.html">安全退出</a></span>
+			</p>
+		</header>
+		<section>
+			<script src="scripts/menu.js"></script>
+			<table border="" cellspacing="" cellpadding="">
+				<tr style="text-align: center; background: #fff; color: #FF5500;"><th colspan="7" style=" font-weight: bold; font-size: 18px; color: #FF6600;">文章分类</th></tr>
+				<tr>
+					<th class="current">html</th>
+					<th>css</th>
+					<th>javascript</th>
+					<th>nodejs</th>
+					<th>框架</th>
+					<th>其他</th>
+					<th>爱生活</th>
+				</tr>
+				<tr>
+					<!--<td></td>-->
+				</tr>
+			</table>
+	</section>
+	</body>
+</html>

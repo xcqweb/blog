@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>徐昌乾个人博客|程序员交流的平台</title>
+		<meta name="keywords" content="个人博客,web博客,web前端博客,web前端个人博客"/>
+		<meta name="description" content="web前端,前端开发,web前端技术交流,点滴的个人web前端博客"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/publick.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/slide.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/lifeStyle.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/responsive.css"/>
+		<link rel="shortcut icon" href="images/shortcuticon.png"/>
+		<script src="scripts/jquery.min.js"></script>
+		<script src="scripts/jquery.slide.js"></script>
+		<script src="scripts/bannerConfig1.js"></script>
+		<script src="scripts/jquery.tmpl.js"></script>
+		<script src="scripts/beforeEffect.js"></script>
+	</head>
+	<body>
+		<!--头部-->
+		<header>
+			<div class="autoBox welcome">
+				欢迎光临徐昌乾个人博客网站!
+			</div>
+			<div class="autoBox">
+				<nav>
+					<p class="phoneNav"></p>
+					<ul class="box1200">
+						<li class="current"><a href="index.html">首页</a></li>
+						<li><a href="webFore.html">web前端</a></li>				
+						<li><a href="lifeStyle.html">爱生活</a></li>
+						<li><a href="diary.html">日记</a></li>
+						<li><a href="messageMe.html">给我留言</a></li>
+						<li><a href="aboutMe.html">关于我</a></li>
+					</ul>
+					<div class="clear"></div>
+				</nav>
+			</div>
+		</header>
+		
+		<!--轮播+关于我开始-->
+		<div class="box1200 martop20">
+			<!--位置-->
+			<div class="position">
+				<span class="icon icon_p"></span>
+				<span><a href="index.html">首页</a></span>
+				<span class="currentPosition"></span>
+				<div class="clear"></div>
+			</div>
+			<!--轮播开始-->
+			<div id="bannner_life">
+				<div class="slideBox">
+					<ul class="conBox">
+						<li>
+							<img src="images/banner_life1.png"/>
+							<p class="colorO">我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。 —— 蒙田</p>
+						</li>
+						<li>
+							<img src="images/banner_life3.png"/>
+							<p class="colorW">Stay hunger Stay foolish</p>
+						</li>
+						<li>
+							<img src="images/banner_life5.jpg"/>
+							<p>大海,梦想启程的地方</p>
+						</li>
+						<li>
+							<img src="images/banner_life2.png"/>
+							<p class="colorW">曼巴精神</p>
+						</li>
+						<li>
+							<img src="images/banner_life4.jpg"/>
+							<p>心灵不在它生活的地方，但在它所爱的地方。</p>
+						</li>
+					</ul>
+					<ul class="control">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+					<ul class="arrow">
+						<li class="arrowLeft"><</li>
+						<li class="arrowRight">></li>
+					</ul>
+				</div>	
+			</div>
+		</div>
+		<!--轮播+关于我结束-->
+		<!--文章-->
+		<div class="box1200 martop20" id="newArticle">
+			<article>
+				<h1>记录生活</h1>
+			</article>
+			<!--单个博客文章-->
+				<script id="article_lifestyle" type="text/html">
+					<div class="blogEssay">
+						<!--图片-->
+						<figure>
+							<img src={{= imgUrl}} alt={{= classify}}/>
+						</figure>
+						<ul>
+							<h3>
+								<a href="article.html?id={{= _id}}" title="" target="_blank">{{= title}}</a>
+							</h3>
+							<p class="con_life">
+								
+							</p>
+							<p class="detailed"><a href="article.html?id={{= _id}}" target="_blank">[详情]</a></p>
+							<p class="author">
+								<span class="pTime fl icon">
+									{{= ctime}}
+								</span>
+								<span class="help fr icon" helpid="{{= _id}}">{{= help}}</span>			
+								<span class="tips">+1</span>	
+								<span class="skim fr icon">浏览{{= skim}}</span>
+								<span class="comment fr icon"><a href="article.html?id={{= _id}}" target="_blank">评论{{= discuss}}</a></span>
+							</p>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</script>
+			<!--音乐控-->
+			<div id="music">
+				<p class="title">音乐控</p>
+				<ul>
+					<li class="current">
+						<img src="images/music1.png"/>
+						<a href="http://music.163.com/#/song?id=418603077&market=sogouqk" target="_blank" title="点击播放">告白气球<br />杰伦带你回忆青春</a>
+					</li>
+					<li>
+						<img src="images/music2.png"/>
+						<p><a href="http://music.163.com/#/song?id=2114180&market=baiduqk" target="_blank" title="点击播放">look what you made me do<br />泰勒复仇之作</a></p>
+					</li>
+					<li>
+						<img src="images/music3.png"/>
+						<a href="http://music.163.com/#/song?id=28295189&autoplay=true&market=baiduhd" target="_blank" title="点击播放">all of me<br />经典歌曲</a>
+					</li>
+					<li>
+						<img src="images/music6.png"/>
+						<a href="http://music.163.com/#/song?id=27808044&market=baiduqk" target="_blank" title="点击播放">丑八怪<br />流行之作</a>
+					</li>
+					<li>
+						<img src="images/music4.png"/>
+						<a href="http://music.163.com/#/artist?id=1045123&market=baiduqk" target="_blank" title="点击播放">fade<br />节奏感</a>
+					</li>
+					<li>
+						<img src="images/music5.png"/>
+						<a href="http://music.163.com/#/song?id=857881&market=baiduqk" target="_blank" title="点击播放">sometime<br />带你领略世界万物</a>
+					</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--分页-->
+		<div class="box1200">
+			<ul id="page">
+				
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<!--页脚-->
+		<footer>
+			<div class="copyRight box1200">
+				Copyright @&copy; 2017 All rights reserved.
+			</div>
+		</footer>
+		<!--返回顶部-->
+		<ul id="backTop">
+			<li class="icon top"></li>
+			<li class="icon wechat"></li>
+			<li class="icon" id="QRcode"></li>
+		</ul>
+		<script src="scripts/afterEffect.js"></script>
+		<script type="text/javascript">
+			
+			
+				showlist();
+		
+				function showlist(page){
+					var page = page || 1;
+					//爱生活文章列表
+					$.ajax({
+						url:"/article_lifestyle.html?page="+page,
+						type:"get",
+						dataType:"json",
+						success:function(data){
+							var pagecount = data.pop();
+							$("#article_lifestyle").tmpl(data).appendTo("article");
+							
+								var str='';
+							if(page>1){ //当页码大于1 时  显示上一页
+								str+='<li class="upPage"><a href="javascript:showlist('+(page-1)+');">上一页</a></li>';
+							}
+							
+							for(var i=page-2; i<page+5; ++i){
+								if(i<1){continue;} //当前页码小于1 跳出当前循环不显示
+								if(i>pagecount){break;}
+								
+								if(i===page){
+									str+='<li class="current"><a href="javascript:showlist('+i+');">'+i+'</a></li>';
+								}else{
+									str+='<li><a href="javascript:showlist('+i+');">'+i+'</a></li>';
+								}
+								
+							}
+							//当当前页面小于总页数
+							if(page<pagecount){
+								str+='<li class="downPage"><a href="javascript:showlist('+(page+1)+');">下一页</a></li>';
+							}
+							
+							document.getElementById("page").innerHTML=str;
+							showConList(data);
+						}
+					});
+				}
+				
+			function showConList(data){
+				//将文章列表
+				var con_life = $(".con_life"),
+					w = document.documentElement.clientWidth,
+					con = "";
+				for(var i=0; i<data.length; ++i){
+					if(w<768){
+							con = data[i].content.match(/[\u4e00-\u9fa5]/g).join("").substr(0,20);//只截取中文 取30个
+						}else{
+							con = data[i].content.match(/[\u4e00-\u9fa5]/g).join("").substr(0,50);//只截取中文 取50个
+						}
+					con_life[i].innerHTML = con+"...";
+				}
+			}
+		</script>
+	</body>
+</html>

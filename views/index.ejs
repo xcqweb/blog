@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charst="utf-8"/>
+    <title>网站首页</title>
+    	<link rel="shortcut icon" href="images/manageIcon.png"/>
+    <style>
+    	ul li{border-bottom:1px dashed #ccc; font:18px/36px 微软雅黑;}
+    </style>
+  </head>
+  <body>
+    <ul>
+    	<%for(var i=0; i<data.length; i++){%>
+    	<li><a href="content.html?id=<%=data[i]._id%>"><%=data[i].title%></a></li>
+    	<%}%>
+    </ul>
+  </body>
+</html>

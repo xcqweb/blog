@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>徐昌乾个人博客|程序员交流的平台</title>
+		<meta name="keywords" content="个人博客,web博客,web前端博客,web前端个人博客"/>
+		<meta name="description" content="web前端,前端开发,web前端技术交流,点滴的个人web前端博客"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/publick.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/responsive.css"/>
+		<link rel="shortcut icon" href="images/shortcuticon.png"/>
+		<script src="scripts/jquery.min.js"></script>
+		<script src="scripts/jquery.tmpl.js"></script>
+		<script src="scripts/jquery.easing.min.js"></script>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="autoBox">
+			<div class="box1200" id="articleSign">
+				<p>生活就像一杯白开水水,你往里面加什么,就会得到不一样的味道!</p>
+			</div>
+		</div>
+		<header>
+			<div class="autoBox">
+				<nav>
+					<p class="phoneNav"></p>
+					<ul class="box1200">
+						<li class="current"><a href="index.html">首页</a></li>
+						<li><a href="webFore.html">web前端</a></li>				
+						<li><a href="lifeStyle.html">爱生活</a></li>
+						<li><a href="diary.html">日记</a></li>
+						<li><a href="messageMe.html">给我留言</a></li>
+						<li><a href="aboutMe.html">关于我</a></li>
+					</ul>
+					<div class="clear"></div>
+				</nav>
+			</div>
+		</header>
+		<div class="box1200 martop20">
+			<!--位置-->
+			<div class="position">
+				<span class="icon icon_p"></span>
+				<span><a href="index.html">首页</a></span>
+				<span class="currentPosition">&emsp;>&emsp;<%=data.title%></span>
+				<div class="clear"></div>
+			</div>
+			<!--最新文章-->
+		<div class="box1200 martop20" id="article_con">
+			<article style="background: url(/images/articleBg.png) repeat;  box-shadow: 10px 10px 8px #ccc;">
+				
+				<p class="title" style="text-align: center; font-size: 26px; margin: 20px 0px; font-weight: bold; color: skyblue;"><%=data.title%></p>
+				<p style="margin: 0px 30px 0px 20px; border-top: 1px dashed #F2A881;border-bottom: 1px dashed #F2A881; text-align: center; padding: 10px 0px; color: firebrick;">作者: <span style="margin-right: 20px;"><%=data.author%></span>浏览量:<span class="skim" style="margin: 0px 20px;"><%=data.skim%></span>编辑时间: <span><%=data.ctime%></span></p>
+				<p id="content" style="padding: 0px 30px;"></p>
+			</article>
+		</div>
+			<!--导航-->
+			<div id="slideNav">
+				<ul>
+					<li><a href="index.html" target="_blank">首页</a></li>
+					<li><a href="webFore.html" target="_blank">web前端</a></li>
+					<li><a href="lifeStyle.html" target="_blank">爱生活</a></li>
+					<li><a href="diary.html" target="_blank">日记</a></li>
+					<li><a href="messageMe.html" target="_blank">给留言</a></li>
+					<li><a href="aboutMe.html" target="_blank">关于我</a></li>
+				</ul>
+			</div>
+			<!--清除浮动-->
+			<div class="clear"></div>
+		</div>
+		<!--评论-->
+			<div class="box1200 martop60">
+				<h3 class="paddingLeft10">评论:</h3>
+					<p><textarea name="commemt" id="comment" maxlength="150"></textarea></p>
+					<p class="s_btn"><input class="fr" type="button" id="commentBtn" value="提交"/></p>
+			</div>
+			<div class="clear"></div>
+			<div class="box1200 martop60">
+				<p class="commentList"><span>评论列表:</span></p>
+				<ul id="commentCon"></ul>
+			</div>
+			<div class="more" id="commentMore">查看更多>></div>
+		<!--页脚-->
+		<footer>
+			<div class="copyRight box1200">
+				Copyright @&copy;" 2017 All rights reserved.
+			</div>
+		</footer>
+		<!--返回顶部-->
+		<ul id="backTop">
+			<li class="icon top"></li>
+			<li class="icon wechat"></li>
+			<li class="icon" id="QRcode"></li>
+		</ul>
+		<script src="scripts/baiduShare.js"></script>
+		<script src="scripts/afterEffect.js"></script>
+		<script type="text/javascript">
+			//ajax请求文章内容
+			var id = location.href.split("=")[1];
+			
+			$.get('/article_con.html?id='+id,function(data){
+				var html=  data.content;
+				$("#content").html(html);
+			});
+			
+			//文字效果
+			var w = document.documentElement.clientWidth;
+			if(w<768){
+				$("#articleSign p").css("top",-100).animate({"top":"28px"},3000,"easeInOutElastic");
+			}else{
+				$("#articleSign p").css("top",-100).animate({"top":"0"},3000,"easeInOutElastic");
+			}
+			
+			//文章评论保存
+			$("#commentBtn").click(function(){
+				var txtVal = $("#comment").val();
+				if(txtVal.length===0){
+					alert("请输入内容!");
+				}else{
+					$.post('/savecomment.html',"id="+id+"&"+"content="+txtVal,function(data){
+						alert(data.msg);
+						$("#comment").val("");
+						showComment();
+					});
+				}
+			});
+			
+			//显示文章评论的路由
+			$(function(){
+   				showComment(); 
+			});
+			
+			function showComment(page){
+				page = page || 0;
+				$.get("/showcomment.html?id="+id+"&"+"page="+page,function(data){
+					if(data.length===0){
+						$("#commentMore").text("没有更多数据了...");
+					}else{
+						$("#tmpl_comment").tmpl(data).appendTo("#commentCon");
+					}
+				});
+			}
+			
+			var page = 1;
+			$("#commentMore").click(function(){
+   				showComment(page); 
+   				page+=1;
+			});
+			
+			//评论数量
+			$.ajax({
+				url:"/save_commentNum.html?id="+id,
+				success:function(data){
+				}
+			});
+		</script>
+		<script id="tmpl_comment" type="text/html">
+			<li>{{= content}} <span class="commentTime">{{= ctime}}</span></li>
+		</script>
+	</body>
+</html>

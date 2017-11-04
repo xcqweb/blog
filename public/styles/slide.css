@@ -1,0 +1,74 @@
+ul
+			{
+				margin: 0px;
+				padding: 0px;
+			}
+			.slideBox
+			{
+				width: 490px;
+				height: 174px;
+				position: relative;
+			}
+			
+			.slideBox .conBox li
+			{
+				list-style: none;
+				position: absolute;
+			}
+			
+			.slideBox .control
+			{
+				position: absolute;
+				left: 50%;
+				bottom: 10px;
+			}
+			
+			.slideBox .control li
+			{
+				width: 20px;
+				line-height: 20px;
+				background-color: #FF6600;
+				margin-right: 20px;
+				list-style: none;
+				float: left;
+				text-align: center;
+				color: #fff;
+				cursor: pointer;
+			}
+			
+			/*箭头*/
+			.slideBox .arrow
+			{
+				display: none;
+				cursor: pointer;
+			}
+			
+			.slideBox .arrow li
+			{
+				list-style: none;
+				width: 30px;
+				height: 60px;
+				font-size: 30px;
+				color: rgba(225,225,225,0.8);
+				background-color: rgba(200,200,200,0.3);
+				
+				text-align: center;
+				line-height: 60px;
+				
+				position: absolute;
+			}
+					
+			.slideBox .arrow .arrowLeft
+			{
+				left: 0px;
+				top: 50%;
+				margin-top: -30px;
+			}
+			
+			.slideBox .arrow .arrowRight
+			{
+				right: 0px;
+				top: 50%;
+				margin-top: -25px;
+			}
+			

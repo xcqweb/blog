@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文章编辑</title>
+		<link rel="stylesheet" type="text/css" href="images/index.css"/>
+		<link rel="shortcut icon" href="images/manageIcon.png"/>
+		<script src="scripts/jquery.js"></script>
+		<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+		<script charset="utf-8" src="kindeditor/kindeditor-all-min.js"></script>
+		<script charset="utf-8" src="kindeditor/lang/zh-CN.js"></script>
+		<script type="text/javascript" charset="utf-8" src="kindeditor/plugins/code/prettify.js"></script>
+		<script src="/admin/loginState.html"></script>
+		
+		<script>
+			$(function() {
+				var editor = KindEditor.create('textarea[name="content"]');
+			});
+		</script>
+		<style type="text/css">
+			table{
+				width: 100%;
+				border-collapse: collapse;
+				font-size: 14px;
+				margin: 10px 0px 0px 10px;
+			}
+
+			table td{
+				border: solid 1px #ccc;
+				padding-right: 5px;
+				height: 30px;
+				font-family: "微软雅黑";
+			}
+
+			table td.leftlable{
+				width: 150px;
+				text-align: center;
+				background-color: #DAF1F9;
+			}
+
+			table td input{
+				width: 1000px;
+				border: solid 1px #ccc;
+				margin-left: 5px;
+				height:31px;
+				border: none;
+			}
+
+			table td textarea{
+				width: 1000px;
+				height:450px;
+				border: solid 1px #eee;
+				margin: 5px;
+			}
+
+			select
+			{
+				width: 1000px;
+				height: 31px;
+				border: none;
+			}
+			
+			#btnsave{
+				width: 80px;
+				background-color: darkorange;
+				color: white;
+				border:solid 1px #FF8C00;
+				height: 30px;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>网站后台管理系统</h1>
+			<p>
+				<a href="/admin"><span class="icon home"></span>系统首页</a>
+				<span class="icon quit"><a href="./logout.html">安全退出</a></span>
+				
+			</p>
+		</header>
+		<section>
+			<script src="scripts/menu.js"></script>
+			<!--<h3>文章修改:</h3>-->
+		<form action="/admin/save_edit.html" method="post">
+			<input type="hidden" value="<%=data._id%>" name="id" />
+			<table cellpadding="0" cellspacing="0">
+				<tr><td class="leftlable">文章修改</td><td class="leftlable"></td></tr>
+				<tr><td class="leftlable">标题</td><td><input type="text" name="title" value="<%=data.title%>"/></td></tr>
+				<tr><td class="leftlable">类别</td>
+					<td>
+						<select name="classify" value="<%=data.classify%>">
+							<option>html</option>
+							<option>css</option>
+							<option>javascript</option>
+							<option>nodejs</option>
+							<option>框架</option>
+							<option>爱生活</option>
+							<option>其他</option>
+						</select>
+					</td>
+				</tr>
+				<tr><td class="leftlable">作者</td><td><input type="text" name="author" value="<%=data.author%>"/></td></tr>
+				<tr><td class="leftlable">图片url</td><td><input type="text" name="imgUrl" value=<%=data.imgUrl%> /></td></tr>
+				<tr>
+					<td class="leftlable">内容</td>
+					<td>
+					<script type="text/javascript"><!--
+							google_ad_client = "ca-pub-7116729301372758";
+							/* 更多演示（728x90） */
+							google_ad_slot = "5052271949";
+							google_ad_width = 800;
+							google_ad_height = 0;
+							//-->
+						</script>
+						<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+						</script>
+						<form>
+							<textarea name="content">
+								<%=data.content%>
+							</textarea>
+						</form>
+					</td>
+				</tr>
+				<tr><td class="leftlable">&nbsp;</td><td><input type="submit" id="btnsave" value="保存修改"/></td></tr>
+			</table>
+		</form>
+	</section>	
+	</body>
+</html>

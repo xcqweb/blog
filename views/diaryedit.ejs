@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>写日记</title>
+		<link rel="stylesheet" type="text/css" href="images/index.css"/>
+		<link rel="shortcut icon" href="images/manageIcon.png"/>
+		<script src="scripts/jquery.js"></script>
+		<script src="/admin/loginState.html"></script>
+		
+		<style type="text/css">
+			form p
+			{
+				width: 800px;
+			}
+			
+			textarea
+			{
+				width: 800px;
+				height: 300px;
+				margin-left: 20px;
+			}
+			
+			input
+			{
+				background-color: #FF6600;
+				border: none;
+				padding: 6px 10px;
+				color: #fff;
+				font-size: 16px;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>网站后台管理系统</h1>
+			<p>
+				<a href="/admin"><span class="icon home"></span>系统首页</a>
+				<span class="icon quit"><a href="./logout.html">安全退出</a></span>
+			</p>
+		</header>
+		
+		<section>
+			<script src="scripts/menu.js"></script>
+		<form action="/admin/save_diaryedit.html" method="post">
+			<p style="margin-left: 20px; color: #FF6600; font-weight: bold;">修改日记:</p>
+			<p><textarea name="content"><<%=data.content%></textarea></p>
+			<p><input type="submit" value="保存"/></p>
+			<p><input type="hidden" name="editid" id="editid" value="<%=data._id%>" /></p>
+		</form>
+	</section>
+	</body>
+</html>

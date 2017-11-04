@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title><%=data.title%></title>
+		<link rel="shortcut icon" href="images/manageIcon.png"/>
+		<style type="text/css">
+			h1
+			{
+				background-color: #FF8C00;
+			}
+		</style>
+	</head>
+	<body>
+		<h1><%=data.title%></h1>
+		<p>发布时间： <%=data.ctime.toLocaleString()%>  来源：<%=data.source%> 浏览次数：<%=data.hits%></p>
+		<div>
+				<%=data.content%>
+		</div>
+		<p>作者：<%=data.author%></p>
+	</body>
+</html>

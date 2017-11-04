@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新增管理员</title>
+		<link rel="shortcut icon" href="images/manageIcon.png"/>
+		<link rel="stylesheet" type="text/css" href="images/index.css"/>
+		<script src="scripts/jquery.js"></script>
+		<script src="/admin/loginState.html"></script>
+		<script src="/admin/checkAdmin.html"></script>
+		<style type="text/css">
+			table
+			{
+				width: 1130px;
+				border-collapse: collapse;
+				border: 1px solid #ccc;
+				margin-top: 20px;
+			}
+			
+			table th
+			{
+				background-color: #DAF1F9;
+				padding: 4px 6px;
+			}
+			
+			tr input,select
+			{
+				border: none;
+				width: 249px;
+				height: 29px;
+			}
+			
+			input[type=submit]
+			{
+				background-color: #FF6600;
+				border: none;
+				padding: 6px 10px;
+				color: #fff;
+				font-size: 16px;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>网站后台管理系统</h1>
+			<p>
+				<a href="/admin"><span class="icon home"></span>系统首页</a>
+				<span class="icon quit"><a href="./logout.html">安全退出</a></span>
+			</p>
+		</header>
+		<section>
+			<script src="scripts/menu.js"></script>
+		<form action="/admin/add_user.html" method="post">
+			<table border="" cellspacing="" cellpadding="">
+				<tr><th colspan="4" style="color: #FF6600;">新增管理员</th></tr>
+				<tr>
+					<th>用户名</th>
+					<th>密码</th>
+					<th>角色</th>
+					<th>序号</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="username"/></td>
+					<td><input type="password" name="password"/></td>
+					<td>
+						<select name="role">
+							<option>超级管理员</option>
+							<option>普通管理员</option>
+						</select>
+					</td>
+					<td><input type="number" name="sort"/></td>
+				</tr>
+			</table>
+			<p><input type="submit" value="保存"/></p>
+		</form>
+	</section>
+	</body>
+</html>

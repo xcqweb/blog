@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文章列表</title>
+		<link rel="stylesheet" type="text/css" href="images/index.css"/>
+		<link rel="shortcut icon" href="images/manageIcon.png"/>
+		<script src="scripts/jquery.js" type="text/javascript"></script>
+		<script src="scripts/jquery.tmpl.js" type="text/javascript"></script>
+		<script src="/admin/loginState.html"></script>
+		<style type="text/css">
+			table{
+				width: 1100px;
+				border-collapse: collapse;
+				font-size: 14px;
+				margin: 10px 0px 0px 10px;
+			}
+			
+			tr th{
+				background-color: #DAF1F9;
+				padding: 4px 6px;
+			}
+			table td ,th{
+				border: solid 1px #ccc;
+				padding-right: 5px;
+				height: 30px;
+				text-align: center;
+				font-family: "微软雅黑";
+			}
+			
+			table td a{
+				text-decoration: none;
+				color: black;
+				margin-left: 10px;
+			}
+			
+			.tdcenter{
+				text-align: center;
+			}
+			
+			.td100{
+				width: 100px;
+			}
+			
+			#btnsave{
+				width: 80px;
+				background-color: darkorange;
+				color: white;
+				border:solid 1px #FF8C00;
+				height: 20px;
+			}
+			
+			#page
+			{
+				width: 1000px;
+				margin-top: 30px;
+				padding-bottom: 100px;
+				position: relative;
+				left: 50%;
+				margin-left: -250px;
+			}
+			
+			#page li
+			{
+				list-style: none;
+				width: 36px;
+				height: 36px;
+				text-align: center;
+				color: #337AB7;
+				line-height: 36px;
+				margin-left: 10px;
+				border: 1px solid #ccc;
+				float: left;
+				border-radius: 4px;
+			}
+			
+			#page li a
+			{
+				color: #337AB7;
+				font-size: 16px;
+			}
+			
+			#page .current
+			{
+				background-color: #337AB7;
+			}
+			
+			#page .current a
+			{
+				color: #fff;
+			}
+			
+			#page .upPage
+			{
+				width: 90px;
+			}
+			
+			#page .downPage
+			{
+				width: 90px;
+			}
+			
+			.bcRed
+			{
+				color: #fff;
+				font-size: 16px;
+				background-color: #FF6600;
+				border: none;
+				width: 120px;
+				height: 32px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>网站后台管理系统</h1>
+			<p>
+				<a href="/admin"><span class="icon home"></span>系统首页</a>
+				<span class="icon quit"><a href="./logout.html">安全退出</a></span>
+			</p>
+		</header>
+		<section>
+			<script src="scripts/menu.js"></script>
+		<table cellpadding="0" cellspacing="0">
+			<tr><th colspan="7" style="color: #FF6600; font-size: 18px; font-weight: bold;">文章列表</th></tr>
+			<tr style="border: 1px dashed #fff;">
+				<td>类别</td>
+				<td>
+					<select id="search_classify" style="width: 300px; height: 31px;">
+						<option>全部</option>
+						<option>html</option>
+						<option>css</option>
+						<option>javascript</option>
+						<option>nodejs</option>
+						<option>框架</option>
+						<option>其他</option>
+						<option>爱生活</option>
+					</select>
+				</td>
+				<td>关键词</td>
+				<td colspan="2"><input type="text" id="search_input"  /></td>
+				<td><input type="button" class="bcRed" id="search_btn" value="搜索" /></td>
+				<td><input type="button" class="bcRed" id="del_article" value="删除" /></td>
+			</tr>
+			<tr>
+				<th style="width: 96px;">全选/取消<input type="checkbox" name="checkAll" id="checkAll"/></th>
+				<th class="tdcenter">标题</th>
+				<th class="tdcenter td100">类别</td>
+				<th class="tdcenter td100">图片url</th>
+				<th class="tdcenter td100">作者</th>
+				<th class="tdcenter td100">时间</th>
+				<th class="tdcenter td100">操作</th>
+			</tr>
+			<tbody id="list"></tbody>
+		</table>	
+	</section>
+	<!--分页-->
+	<ul id="page"></ul>
+	<script id="tmpl" type="text/html">
+		<tr>
+			<th style="width: 96px;"><input type="checkbox" name="" value="{{= _id}}"/></th>
+			<td>{{= title}}</td>
+			<td>{{= classify}}</td>
+			<td class="tdcenter">{{= imgUrl}}</td>
+			<td class="tdcenter">{{= author}}</td>
+			<td class="tdcenter">{{= ctime}}</td>
+			<td>
+				<a href="edit.html?id={{= _id}}">修改</a>
+			</td>
+		</tr>
+	</script>
+		
+	<script>
+		
+		showlist();
+		
+		//显示文章列表
+		function showlist(page,query){
+			page= page || 1; 
+			var query = query || window.queryStr || "";
+			window.queryStr = query; //将query保存一份存为window变量 方便下次调用
+			
+			ajax({
+				url:"/admin/list.html?page="+page+"&"+query,
+				dataType:"json",
+				ok:function(data){
+					var pagecount = data.pop(); //取出从服务器端返回的总页数
+					$("#list").html($("#tmpl").tmpl(data)); //渲染模板
+					
+					var str='';
+					if(page>1){
+						str+='<li class="upPage"><a href="javascript:showlist('+(page-1)+');">上一页</a></li>';
+					}
+					
+					for(var i=page-2; i<page+2; i++){
+						if(i<1){continue;}
+						if(i>pagecount){break;}
+						if(i===page){
+							str+='<li class="current"><a href="javascript:showlist('+i+');">'+i+'</a></li>';
+						}else{
+							str+='<li><a href="javascript:showlist('+i+');">'+i+'</a></li>';
+						}
+						
+					}
+					
+					//显示 下一页
+					if(page<pagecount){
+						str+='<li class="downPage"><a href="javascript:showlist('+(page+1)+');">下一页</a></li>';
+					}
+					document.getElementById("page").innerHTML = str;
+				}
+			});
+		}
+		
+		//删除文章
+		$("#del_article").click(function(){
+			var oinput = $("input[type=checkbox]:not('#checkAll')");console.log(oinput);
+			var ids=[];
+			for(var i in oinput){
+				if(oinput[i].checked){
+					ids.push(oinput[i].value);
+				}
+			}
+			if(ids.length===0){
+				alert("请选择要删除的数据!")
+			}else{
+				if(confirm("确定要删除吗?")){
+						ajax({
+						url:"/admin/delete.html",
+						type:"post",
+						data:"ids="+ids,
+						dataType:"json",
+						ok:function(data){
+							alert(data.msg);
+							location.href='/admin/articlelist.html';
+						}
+					});
+				}
+			}
+			
+		});
+		
+		//点击搜索按钮获取查询的条件
+		$("#search_btn").click(function(){
+			var keyword = $("#search_input").val();
+			var classify = $("#search_classify").val();
+			var arr=[];
+			arr.push("keyword="+keyword);
+			arr.push("classify="+classify);
+			
+			var query = arr.join("&");
+			showlist(1,query); //调用显示文章列表函数
+		});
+		
+		//全选和取消全选
+		$("#checkAll").click(function(){
+			var isCkeck = $(this).prop("checked");
+			//找到处全选框之外的所有多选框
+			$("input[type=checkbox]:not('#checkAll')").prop("checked",isCkeck);
+		});
+		
+		$("#search_input").focus(function(){
+			$(this).attr("placeholder","")
+		});
+		
+		$("#search_input").blur(function(){
+			$(this).attr("placeholder","请输入文章类名关键字")
+		});
+	</script>
+	</body>
+</html>

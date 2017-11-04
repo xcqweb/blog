@@ -1,0 +1,34 @@
+#diaryCon li
+{
+	width: 800px;
+	background-color: #fff;
+	padding: 20px 10px;
+	font-size: 16px;
+	line-height: 26px;
+	letter-spacing: 2px;
+	font-style: italic;
+	position: relative;
+	box-shadow: 12px 12px #eee;
+	margin-bottom: 20px;
+}
+
+#diaryCon .arrow
+{
+	display: block;
+	position: absolute;
+	right: -40px;
+	top: 50%;
+	margin-top: -20px;
+	border-width: 20px;
+	border-style: solid;
+	border-color: transparent transparent transparent #d5e0e9;
+}
+
+#diaryCon .dtime
+{
+	float: right;
+	right: 10px;
+	bottom: 12px;
+	position: relative;
+	
+}

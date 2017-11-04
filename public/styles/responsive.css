@@ -1,0 +1,461 @@
+@charset "utf-8";
+
+@media screen and (max-width: 1170px) {
+	
+	header
+	{
+		width: 100%;
+	}
+	
+	.box1200
+	{
+		width: 940px;
+	}
+	
+	nav li
+	{
+		width: 126px;
+	}
+	
+	#bannner
+	{
+		margin-right: 10px;
+	}
+	
+	#bannner .slideBox,#bannner,#newArticle article
+	{
+		width: 632px;
+	}
+	
+	#bannner .slideBox img
+	{
+		/*width: 632px;*/
+		width: 100%;
+		height: 336px;
+	}
+	
+	#newArticle figure img
+	{
+		width: 160px;
+	}
+	
+	#newArticle .blogEssay ul
+	{
+		width: 350px;
+	}
+	
+	#newArticle .blogEssay
+	{
+		padding: 8px 0px;
+	}
+	
+	#newArticle .blogEssay ul .author
+	{
+		margin-top: 10px;
+	}
+	
+	#tecDiscussion
+	{
+		margin-top: 20px;
+	}
+	
+	#bannner_life .slideBox img,#bannner_life,#bannner_life .slideBox
+	{
+		width: 940px;
+		height: 400px;
+	}
+	
+	#bannner_life .slideBox p,#contentSlide
+	{
+		display: none;
+	}	
+	
+	#msg,#msg textarea,#comment,#msg p
+	{
+		width: 600px;
+	}
+	
+	#commentList .content
+	{
+		width: 450px;
+	}
+	
+	#commentList .content .date
+	{
+		width: 436px;
+	}
+	
+	.title
+	{
+		font-size: 20px;
+		padding-top: 10px;
+	}
+	
+	#slideNav
+	{
+		display: none;
+	}
+}	
+
+@media screen and (max-width: 980px) {
+	#newArticle article
+	{
+		width: 768px;
+		margin: 0px auto;
+	}
+	
+	header
+	{
+		width: 126%;
+	}
+	
+	.position
+	{
+		width: 748px;
+		padding-left: 20px;
+	}
+	
+	nav .current,nav li:hover
+	{
+		background-color: #D2DCF8;
+		border-radius: 10px;
+		box-shadow: 0px transparent;
+		color: #000;
+	}
+	
+	.box1200,#bannner .slideBox,footer,#pageBox,.clear,body,#about
+	{
+		width: 768px;
+	}
+	
+	nav li
+	{
+		width: 108px;
+	}
+	
+	#bannner .slideBox img
+	{
+		width: 768px;
+		height: 336px;
+	}
+	
+	#newArticle
+	{
+		margin-top: 20px;
+	}
+	
+	#newArticle figure img
+	{
+		width: 160px;
+	}
+	
+	#newArticle figure
+	{
+		margin-left: 20px;
+	}
+	
+	#newArticle .blogEssay ul
+	{
+		width: 480px;
+		margin-right: 20px;
+	}
+	
+	#backTop
+	{
+		right: 0px;
+	}
+	
+	#diaryCon li
+	{
+		width: 668px;
+	}
+	
+	.more
+	{
+		width: 668px;
+	}
+	
+	#page
+	{
+		width: 668px;
+		margin-left: -134px
+	}
+	
+	#music,#slideNav,#link,#classsify,#tecDiscussion,#aboutMe
+	{
+		display: none;
+	}
+	
+	.s_btn
+	{
+		width: 600px;
+	}
+	
+	.title
+	{
+		font-size: 24px;
+		padding-top: 10px;
+	}
+	
+	#article_con article
+	{
+		width: 632px;
+	}
+}	
+
+
+@media screen and (max-width: 768px) {
+	
+	header,.box1200,#bannner .slideBox,footer,#pageBox,.clear,body,#bannner,.commentList
+	{
+		width: 100%;
+	}
+	
+	#article_con img
+	{
+		width: 90%;
+		height: 150px;
+	}
+	
+	body,html
+	{
+		overflow-x: hidden;
+	}
+	
+	nav
+	{
+		line-height: 36px;
+	}
+	
+	nav li
+	{
+		float: none;
+		height: 36px;
+		line-height: 36px;
+		width: 100%;
+		font-size: 16px;
+		text-align: center;
+		margin-top: 6px;
+	}
+	
+	nav .current,nav li:hover
+	{
+		background-color: rgba(0,0,0,0.2);
+		border-radius: 0px;
+		box-shadow: none;
+	}
+	
+	#bannner .slideBox img
+	{
+		width:100%;
+		height: 200px;
+	}
+	
+	.position
+	{
+		width: 100%;
+		padding-left: 20px;
+	}
+	
+	#newArticle article
+	{
+		width: 100%;
+	}
+	
+	#about
+	{
+		width: 100%;
+		margin-right: 10px;
+	}
+	
+	#newArticle .blogEssay
+	{
+		background-color: transparent;
+	}
+	
+	#newArticle .blogEssay ul
+	{
+		width: 50%;
+		margin: 10px 0px 0px 0px;
+	}
+	
+	nav p
+	{
+		display: block;
+		height: 36px;
+		padding-left: 10px;
+		color: #fff;
+		background-image: url(../images/nav.png);
+		background-size: 30px 30px;
+		background-repeat: no-repeat;
+		background-position: 28px 3px;
+		cursor: pointer;
+	}
+	
+	#newArticle figure
+	{
+		width: 40%;
+		margin-left: 10px;
+	}
+	
+	#newArticle figure img
+	{
+		width: 85%;
+		height: 120px;
+	}
+	
+	.blogEssay
+	{
+		width:93%;
+		font-size: 12px;
+		border: 1px solid #3d727e;
+		margin: 5px;
+	}
+	
+	#newArticle .detailed,#newArticle .author,nav ul
+	,#bannner_life,#commentList .head,#aboutMe,#classsify
+	{
+		display: none;
+	}
+	
+	#newArticle,.blogEssay ul
+	{
+		width: 100%;
+		float: none;
+		margin-left: 10px;
+	}
+	
+	#msg,#comment,#msg p
+	{
+		width: 100%;
+	}
+	
+	#msgform p,#msg textarea
+	{
+		padding-left: 10px;
+	}
+	
+	#msg input,#msg textarea
+	{
+		width: 96%;
+		line-height: 30px;
+	}
+	
+	#commentList .content
+	{
+		max-width: 360px;
+		float: left;
+		margin-top: 10px;
+	}
+	
+	#commentList .content .date
+	{
+		max-width: 360px;
+		float: right;
+	}
+	
+	#subMsg
+	{
+		width: 100%;
+		height: 36px;
+		float: left;
+		text-align: cnenter;
+		font-size: 16px;
+	}
+	
+	#diaryCon li
+	{
+		width: 100%;
+		line-height: 150%;
+		font-size: 14px;
+		box-shadow: 6px 6px #ddd;
+	}
+	
+	#diaryCon .arrow
+	{
+		display: none;
+	} 
+	
+	#diaryCon .dtime
+	{
+		display: block;
+		margin-top: 10px;
+	}
+	
+	.more
+	{
+		width: 100%;
+		font-size: 14px;
+	}
+	
+	#articleSign
+	{
+		height: 66px;
+		line-height: 20px;
+	}
+	
+	#articleSign p
+	{
+		width: 80%;
+		font-size: 14px;
+		left: 30px;
+	}
+	
+	.title
+	{
+		font-size: 20px;
+		padding-top: 10px;
+	}
+	
+	.skim
+	{
+		margin: 0px 10px;
+	}
+	
+	.s_btn
+	{
+		width: 100%;
+	}
+	
+	.s_btn input
+	{
+		width: 95%;
+		height: 36px;
+		margin-left: 10px;
+		float: left;
+	}
+	
+	#article_con article,#commentCon li
+	{
+		width: 100%;
+	}
+	
+	#commentCon .commentTime
+	{
+		margin-right: 10px;
+	}
+	
+	#backTop .wechat
+	{
+		
+	}
+	
+	#about .content img
+	{
+		margin-bottom: 20px;
+		width: 100%;
+	}
+	
+	#about .content p
+	{
+		margin: 20px 6px;
+		font-size: 16px;
+		width: 100%;
+	}
+	
+	#page
+	{
+		width:100%;
+	}
+		
+}

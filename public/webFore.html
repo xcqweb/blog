@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>web前端|徐昌乾个人博客</title>
+		<meta name="keywords" content="个人博客,web博客,web前端博客,web前端个人博客"/>
+		<meta name="description" content="web前端,前端开发,web前端技术交流,点滴的个人web前端博客"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/publick.css"/>
+		<link rel="shortcut icon" href="images/shortcuticon.png"/>
+		<link rel="stylesheet" type="text/css" href="styles/webFore.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/responsive.css"/>
+		<script src="scripts/jquery.min.js"></script>
+		<script src="scripts/jquery.easing.min.js"></script>
+		<script src="scripts/jquery.tmpl.js"></script>
+		<script src="scripts/beforeEffect.js"></script>
+	</head>
+	<body>
+		<!--头部-->
+		<header>
+			<div class="autoBox welcome">
+				欢迎光临徐昌乾个人博客网站!
+			</div>
+			<div class="autoBox">
+				<nav>
+					<p class="phoneNav"></p>
+					<ul class="box1200">
+						<li class="current"><a href="index.html">首页</a></li>
+						<li><a href="webFore.html">web前端</a></li>				
+						<li><a href="lifeStyle.html">爱生活</a></li>
+						<li><a href="diary.html">日记</a></li>
+						<li><a href="messageMe.html">给我留言</a></li>
+						<li><a href="aboutMe.html">关于我</a></li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</header>
+		<!--头部结束-->
+		<!--最新文章-->
+		<div class="box1200 martop20" id="newArticle">
+			<!--位置-->
+			<div class="position">
+				<span class="icon icon_p"></span>
+				<span><a href="index.html">首页</a></span>
+				<span class="currentPosition"></span>
+				<div class="clear"></div>
+			</div>
+			<!--文章列表-->
+			<h1>web前端</h1>
+			<article id="article">
+				
+			</article>
+			<!--单个博客文章-->
+				<script id="article_webfore" type="text/html">
+					<div class="blogEssay">
+						<!--图片-->
+						<figure>
+							<img src={{= imgUrl}} alt={{= classify}}/>
+						</figure>
+						<ul>
+							<h3>
+								<a href="article.html?id={{= _id}}" target="_blank">{{= title}}</a>
+							</h3>
+							<p class="con_web">
+								
+							</p>
+							<p class="detailed"><a href="article.html?id={{= _id}}"  target="_blank">[详情]</a></p>
+							<p class="author">
+								<span class="pTime fl icon">
+									{{= ctime}}
+								</span>
+								<span class="help fr icon" helpid="{{= _id}}">{{= help}}</span>		
+								<span class="tips">+1</span>	
+								<span class="skim fr icon">浏览{{= skim}}</span>
+								<span class="comment fr icon"><a href="article.html?id={{= _id}}"  target="_blank">评论{{= discuss}}</a></span>
+							</p>
+						</ul>
+						<div class="clear"></div>
+					</div>
+				</script>
+			<!--右侧-->
+			<div id="classsify">
+				<p class="title">文章精选</p>
+				<ul>
+					<li>
+						<p class="menu">HTML<span class="class_iocn class_iocnH"></span></p>
+						<ul class="con conhtml" style="display: block;">
+							<script id="tmpl_html" type="text/html">
+								<li><span class="icon iconlist"></span><a href="article.html?id={{= _id}}">{{= title}}</a></li>
+							</script>
+							
+						</ul>
+					</li>
+					<li>
+						<p class="menu">CSS<span class="class_iocn"></span></p>
+						<ul class="con concss">
+							<script id="tmpl_css" type="text/html">
+								<li><span class="icon iconlist"></span><a href="article.html?id={{= _id}}">{{= title}}</a></li>
+							</script>
+							
+						</ul>
+					</li>
+					<li>
+						<p class="menu">Javascript<span class="class_iocn"></span></p>
+						<ul class="con conjs">
+							<script id="tmpl_js" type="text/html">
+								<li><span class="icon iconlist"></span><a href="article.html?id={{= _id}}">{{= title}}</a></li>
+							</script>
+							
+						</ul>
+					</li>
+					<li>
+						<p class="menu">nodejs<span class="class_iocn"></span></p>
+						<ul class="con connode">
+							<script id="tmpl_node" type="text/html">
+								<li><span class="icon iconlist"></span><a href="article.html?id={{= _id}}">{{= title}}</a></li>
+							</script>
+							
+						</ul>
+					</li>
+					<li>
+						<p class="menu">框架<span class="class_iocn"></span></p>
+						<ul class="con conifram">
+							<script id="tmpl_ifram" type="text/html">
+								<li><span class="icon iconlist"></span><a href="article.html?id={{= _id}}">{{= title}}</a></li>
+							</script>
+							
+						</ul>
+					</li>
+					<li>
+						<p class="menu">其他<span class="class_iocn"></span></p>
+						<ul class="con conother">
+							<script id="tmpl_other" type="text/html">
+								<li><span class="icon iconlist"></span><a href="article.html?id={{= _id}}">{{= title}}</a></li>
+							</script>
+							
+						</ul>
+					</li>
+				</ul>
+				<!--分类结束-->
+				<!--学习资源-->
+				<div class="studySource martop20">
+					<p class="title">学习资源</p>
+					<ul>
+						<li><a href="http://www.w3school.com.cn/" target="_blank" title="必备手册">必备手册</a></li>
+						<li><a href="http://old.seo.chinaz.com/" target="_blank" title="网络营销">SEO</a></li>
+						<li><a href="http://www.jq22.com/" target="_blank" title="丰富的插件资源">插件库</a></li>
+						<li><a href="http://www.iconfont.cn/" target="_blank" title="阿里图标库">iconfont</a></li>
+						<li><a href="https://market.aliyun.com" target="_blank" title="阿里云">服务器</a></li>
+						<li><a href="https://github.com/github" target="_blank" title="全球最大的'同性交友平台'">github</a></li>
+					</ul>
+				</div>
+				
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--分页-->
+		<div class="box1200">
+			<ul id="page">
+				
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<!--页脚-->
+		<footer>
+			<div class="copyRight box1200">
+				Copyright @&copy;" 2017 All rights reserved.
+			</div>
+		</footer>
+		<!--返回顶部-->
+		<ul id="backTop">
+			<li class="icon top"></li>
+			<li class="icon wechat"></li>
+			<li class="icon" id="QRcode"></li>
+		</ul>
+		<script src="scripts/afterEffect.js"></script>
+		<script>
+				showlist();
+				
+				//显示文章列表
+				function showlist(page){
+					page = page || 1 ; //设置默认值 显示第一页数据
+					//首页文章列表
+					$.ajax({
+						url:"/article_webfore.html?page="+page,
+						type:"get",
+						dataType:"json",
+						success:function(data){
+							var pagecount = data.pop(); //取出从服务器端返回的总页数
+							
+							$("#article").html($("#article_webfore").tmpl(data));
+							
+							var str='';
+							if(page>1){ //当页码大于1 时  显示上一页
+								str+='<li class="upPage"><a href="javascript:showlist('+(page-1)+');">上一页</a></li>';
+							}
+							
+							for(var i=page-2; i<page+5; ++i){
+								if(i<1){continue;} //当前页码小于1 跳出当前循环不显示
+								if(i>pagecount){break;}
+								
+								if(i===page){
+									str+='<li class="current"><a href="javascript:showlist('+i+');">'+i+'</a></li>';
+								}else{
+									str+='<li><a href="javascript:showlist('+i+');">'+i+'</a></li>';
+								}
+							}
+							//当当前页面小于总页数
+							if(page<pagecount){
+								str+='<li class="downPage"><a href="javascript:showlist('+(page+1)+');">下一页</a></li>';
+							}
+							document.getElementById("page").innerHTML=str;
+							showConList(data);	
+						}
+					});
+				}
+				
+				
+				//定义函数实现ajax请求获取文章列表
+				function seletarticle(cla,modelname,cont){
+						$.ajax({
+						url:"/article_"+cla+".html",
+						type:"get",
+						dataType:"json",
+						success:function(data){
+							$(modelname).tmpl(data).appendTo(cont);
+						}
+					});
+				}
+				
+				//web前端文章精选html
+				seletarticle("html","#tmpl_html",".conhtml");
+				
+				//web前端文章精选css
+				seletarticle("css","#tmpl_css",".concss");
+				
+				//web前端文章精选js
+				seletarticle("js","#tmpl_js",".conjs");
+				
+				//web前端文章精选node
+				seletarticle("node","#tmpl_node",".connode");
+				
+				//web前端文章精选ifram
+				seletarticle("ifram","#tmpl_ifram",".conifram");
+				
+				//web前端文章精选other
+				seletarticle("other","#tmpl_other",".conother");
+				
+			
+			
+				//将文章列表
+				function showConList(data){
+					var con_web = $(".con_web"),
+						w = document.documentElement.clientWidth,
+						con = "";
+					
+					for(var i=0; i<data.length; ++i){
+						if(w<768){
+								con = data[i].content.match(/[\u4e00-\u9fa5]/g).join("").substr(0,20);//只截取中文 取30个
+							}else{
+								con = data[i].content.match(/[\u4e00-\u9fa5]/g).join("").substr(0,50);//只截取中文 取50个
+							}
+						con_web[i].innerHTML = con+"...";
+					}
+				}
+		</script>
+	</body>
+</html>

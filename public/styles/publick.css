@@ -1,0 +1,514 @@
+@charset "utf-8";
+
+/*页头*/
+header
+{
+	background-color: #6699CC;
+}
+
+.welcome
+{
+	font-size: 14px;
+	background-color: rgba(0,0,0,0.7);
+	color: #fff;
+	position: fixed;
+	top: 0px;
+	padding-left: 12px;
+	z-index: 1000;
+}
+
+nav
+{
+	line-height: 60px;
+	margin: 24px 0px 20px 0px;
+}
+
+nav p
+{
+	display: none;
+}
+
+nav li
+{
+	float: left;
+	height: 56px;
+	width: 150px;
+	font-size: 20px;
+	text-align: center;
+}
+
+nav .current,nav li:hover
+{
+	background-color: #D2DCF8;
+	border-radius: 50px 0px 50px 0px;
+	box-shadow: 5px 5px 3px rgba(250,250,250,0.4);
+	color: #000;
+}
+
+nav a
+{
+	display: block;
+	color: #fff;	
+}
+
+nav li:hover a,nav .current a
+{
+	color: black;	
+}
+
+
+.autoBox
+{
+	width: 100%;
+}
+
+.box1200
+{
+	width: 1200px;
+	margin: auto;
+	box-sizing: border-box;
+}
+
+.fl
+{
+	float: left;
+}
+
+.fr
+{
+	float: right;
+}
+
+.colorW
+{
+	color: #FFF;
+}
+
+.colorO
+{
+	color: #FF6600;	
+}
+
+.clear
+{
+	clear: both;
+}
+
+.martop20
+{
+	margin-top: 20px;
+}
+
+.martop60
+{
+	margin-top: 60px;
+}
+
+.paddingLeft10
+{
+	padding-left: 10px
+}
+/*图标精灵*/
+.icon
+{
+	background: url(../images/icon.png) no-repeat;
+}
+
+
+/*返回顶部*/
+#backTop
+{
+	position: fixed;
+	right: 30px;
+	bottom: 80px;
+	display: none;
+}
+
+#backTop .top,#backTop .wechat
+{
+	width: 50px;
+	height: 50px;
+}
+
+#backTop .top:hover
+{	
+	background-position: -201px -200px;
+}
+
+#backTop .top
+{
+	background-position: -301px -200px;
+}
+
+#backTop .wechat
+{	
+	margin-top: 10px;
+	background-position: -101px -200px;
+}
+
+#backTop .wechat:hover
+{	
+	background-position: -101px -300px;
+}
+
+#QRcode
+{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 50px;
+	left: -150px;
+	opacity: 0;
+	
+	background-position: -600px -300px;
+}
+
+/*最新文章*/
+
+#newArticle article
+{
+	width: 900px;
+	margin-top: 20px;
+	float: left;
+}
+
+#newArticle  h1
+{
+	font-size: 22px;
+	padding: 0px 0px 10px 16px;
+	border-bottom: 2px solid #663366;
+}
+
+ h3 a
+{
+	color: #000;
+	position: relative;
+	left: 0px;
+}
+
+#newArticle .blogEssay
+{
+	font-size: 14px;
+	padding: 30px 0px;
+	border-bottom: 1px #3d727e solid;
+	background-color: #fff;
+}
+
+#newArticle figure
+{
+	float: left;
+	width: 200px;
+	perspective: 500px;
+}
+
+#newArticle figure img
+{
+	width: 200px;
+	height: 140px;
+	transform-origin: center bottom; 
+}
+
+#newArticle figure img:hover
+{
+	transform: rotateX(45deg);
+	animation: roll 0.6s linear;
+	transform-origin: center;
+}
+
+@keyframes roll{
+	from{
+		transform: rotateY(0deg);
+		
+	}
+	to{
+		transform: rotateY(180deg);		
+	}
+}
+
+#newArticle .blogEssay
+{
+	padding-left: 20px;
+}
+
+#newArticle .blogEssay ul
+{
+	float: right;
+	width: 630px;
+	margin-left: 30px;
+	padding-right: 20px;
+}
+
+#newArticle .blogEssay ul p
+{
+	color: #777;
+}
+
+#newArticle .blogEssay ul .con
+{
+	height: 52px;
+	line-height: 26px;
+	overflow: hidden;
+}
+#newArticle .blogEssay .detailed a
+{
+	color: #6DBFFF;
+}
+
+#newArticle .blogEssay ul .author
+{
+	margin-top: 20px;
+	position: relative;
+}
+
+#newArticle .blogEssay .author:after
+{
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	clear: both;
+}
+
+#newArticle .blogEssay .author .pTime
+{
+	padding-left: 20px;
+	background-position: -300px -96px;
+}
+
+#newArticle .blogEssay .author .comment
+{
+	padding-left: 20px;
+	background-position: -300px -50px;
+	cursor: pointer;
+}
+
+#newArticle .blogEssay .author .skim
+{
+	padding-left: 20px;
+	margin: 0px 20px;
+	background-position: -150px -45px;
+}
+
+#newArticle .blogEssay .author .help
+{
+	padding: 0px 20px;
+	background-position: -150px -150px;
+	cursor: pointer;
+}
+
+#newArticle .blogEssay .author .help:hover
+{
+	background-position: -150px -100px;
+}
+
+/*当前位置*/
+.position
+{
+	margin: 20px 0px;	
+}
+
+.position .icon_p
+{
+	display: block;
+	width: 20px;
+	height: 20px;	
+	background-position: 0px -197px;
+}
+
+.position span
+{
+	float: left;
+}
+
+/*页脚*/
+footer
+{
+	font-size: 14px;
+	margin-top: 80px;
+	padding: 60px 0px;
+}
+
+footer .copyRight
+{
+	text-align: center;
+}
+
+/*更多*/
+.more
+{
+	width: 1000px;
+	float: left;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 30px;
+	cursor: pointer
+}
+
+.more:hover
+{
+	color: #FF7800;
+	font-style: italic;
+	animation: m_left 0.6s linear;
+}
+
+@keyframes m_left{
+	from{
+		transform: translateX(0px)
+	}
+	to{
+		transform: translateX(30px);
+	}
+}
+/*点赞提示信息*/
+
+.tips
+{
+	position: absolute;
+	right: 30px;
+	top: 10px;
+	color: #FF6700;
+	font-weight: bold;
+	opacity: 0;
+}
+
+/*文章详情评论*/
+#comment
+{
+	width: 600px;
+	height: 100px;
+	margin-top: 10px;
+	resize: none;
+}
+
+.s_btn
+{
+	width: 600px;
+}
+
+.s_btn input
+{
+	width: 60px;
+	height: 30px;
+	font-size: 16px;
+	text-align: center;
+	border: none;
+	color: #fff;
+	background-color: #FF8C00;
+}
+
+/*评论内容*/
+#commentCon
+{
+	padding-left: 30px;
+	margin-top: 30px;
+}
+
+#commentCon li
+{
+	width: 570px;
+	padding: 10px 0px;
+	border-bottom: 1px solid #ccc;
+}
+
+#commentCon .commentTime
+{
+	float: right;
+}
+
+.commentList
+{
+	padding: 10px 0px 10px 20px;
+	width: 570px;
+	border-bottom: 1px solid #FF7800;
+}
+
+.commentList span
+{
+	position: relative;
+	bottom: -10px;
+	
+	padding: 4px 6px;
+	border-radius: 6px 6px 0px 0px;
+	border: 1px solid #FF7800;
+	font-weight: bold;
+	border-bottom: 1px solid transparent;
+	background-color: #FBF5F7;
+}
+
+
+/*文章详情*/
+#articleSign
+{
+	height: 100px;
+	line-height: 100px;
+	
+	background-color: transparent;
+	background-image: url(/images/leaf2.png),url(../images/leaf1.png);
+	background-repeat: no-repeat;
+	background-size: 100px;
+	background-position: 13px -9px,96px -11px;
+}
+
+#articleSign p
+{
+	font-style: italic;
+	font-size: 20px;
+	text-shadow: 3px 3px #ccc;
+	position: relative;
+	left: 160px;
+}
+
+.title
+{
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+/*侧导航*/
+
+#slideNav
+{
+	width: 278px;
+	float: right;
+}
+
+#slideNav li
+{
+	width: 78px;
+	height: 78px;
+	font-size: 16px;
+	line-height: 78px;
+	background-color: #e0eef1;
+	
+	margin: 6px;
+	text-align: center;
+	float: left;
+}
+
+#slideNav li a
+{
+	display: block;
+	color: #000;
+}
+
+#slideNav li:hover
+{
+	background-color: #67a4b1;
+	box-shadow: 6px 6px 3px #9ec7d0;
+}
+
+#slideNav li:hover a
+{
+	color: #fff;
+}
+
+#article_con article
+{
+	width: 900px;
+	float: left;
+}
+
+#about .content p
+{
+	line-height: 30px;
+}

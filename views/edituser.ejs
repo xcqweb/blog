@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新增管理员</title>
+		<link rel="stylesheet" type="text/css" href="images/index.css"/>
+		<link rel="shortcut icon" href="images/manageIcon.png"/>
+		<script src="scripts/jquery.js"></script>
+		<script src="/admin/loginState.html"></script>
+		
+		<style type="text/css">
+			table
+			{
+				width: 1000px;
+				border-collapse: collapse;
+				border: 1px solid #ccc;
+				margin-top: 20px;
+			}
+			
+			th
+			{
+				font-weight: 500;
+				font-size: 16px;
+				padding: 4px 6px;
+				background-color: #DAF1F9;
+			}
+			
+			tr input,select
+			{
+				border: none;
+				width: 249px;
+				height: 29px;
+				font-size: 16px;
+				text-align: center;
+			}
+			
+			input[type=submit]
+			{
+				background-color: #FF6600;
+				border: none;
+				padding: 6px 10px;
+				color: #fff;
+				font-size: 16px;
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>网站后台管理系统</h1>
+			<p>
+				<a href="/admin"><span class="icon home"></span>系统首页</a>
+				<span class="icon quit"><a href="./logout.html">安全退出</a></span>
+			</p>
+		</header>
+		<section>
+			<script src="scripts/menu.js"></script>
+		<form action="/admin/save_edituser.html" method="post">
+			<table border="" cellspacing="0" cellpadding="2">
+				<tr><th colspan="4" style="color: #FF6600; font-size: 18px; font-weight: bold;">修改用户</th></tr>
+				<tr>
+					<th>用户名</th>
+					<th>密码</th>
+					<th>角色</th>
+					<th>序号</th>
+				</tr>
+				<tr>
+					<td><input type="text" name="username" value="<%=data.username%>" /></td>
+					<td><input type="text" name="password" value="<%=data.password%>" /></td>
+					<td>
+						<select name="role" value="<%=data.role%>">
+							<option>超级管理员</option>
+							<option>普通管理员</option>
+						</select></td>
+					<td><input type="number" name="sort" value="<%=data.sort%>" /></td>
+				</tr>
+			</table>
+			<p><input type="hidden" name="editid" value="<%=data._id%>" /></p>
+			<p><input type="submit" value="保存"/></p>
+		</form>
+	</section>
+	</body>
+</html>

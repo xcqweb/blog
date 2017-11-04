@@ -1,0 +1,111 @@
+@charset "utf-8";
+#bannner_life .conBox p
+{
+	width: 600px;
+	position: absolute;
+	font-style: italic;
+	font-family: arial;
+	top: 100px;
+	left: 200px;
+	font-size: 26px;
+	opacity: 0;
+	line-height: 36px;
+}
+
+#music
+{
+	width: 260px;
+	float: right;
+	margin-top: 34px;
+	background-color: #fff;
+}
+
+#music .title
+{
+	font-size: 18px;
+	color: #fff;
+	padding: 8px 12px;
+	background-color: #FF2255;
+}
+
+#music .current
+{
+	height: 150px;
+}
+
+#music li
+{
+	height: 45px;
+	border-bottom: 1px solid #EA1F00;
+	overflow: hidden;
+}
+
+#music img
+{
+	float: left;
+}
+
+#music li a
+{
+	font-size: 20px;
+	position: relative;
+	top: 20px;
+	left: 4px;
+}
+
+#music audio
+{
+	width: 110px;
+	float: right;
+}
+#footer{
+	padding-top: 300px;
+}
+
+#page
+{
+	width: 900px;
+	margin-top: 30px;
+	position: relative;
+	left: 50%;
+	margin-left: -450px;
+}
+
+#page li
+{
+	width: 36px;
+	height: 36px;
+	text-align: center;
+	color: #337AB7;
+	line-height: 36px;
+	margin-left: 10px;
+	border: 1px solid #ccc;
+	float: left;
+	border-radius: 4px;
+}
+
+#page li a
+{
+	color: #337AB7;
+	font-size: 16px;
+}
+
+#page .current
+{
+	background-color: #337AB7;
+}
+
+#page .current a
+{
+	color: #fff;
+}
+
+#page .upPage
+{
+	width: 90px;
+}
+
+#page .downPage
+{
+	width: 90px;
+}

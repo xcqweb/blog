@@ -1,0 +1,154 @@
+@charset "utf-8";
+#classsify
+{
+	width: 278px;
+	float: right;
+	margin-top: 20px;
+	background-color: #fff;
+}
+
+#classsify .title
+{
+	font-size: 20px;
+	padding: 8px 12px;
+	color: #fff;
+	font-weight: bold;
+	background-color: #f77f2b;
+	border-bottom: none;
+}
+
+#classsify p
+{
+	padding: 4px 0px 4px 10px;
+	border-bottom: 1px solid #3D727E;
+	background-color: rgba(60, 158, 239,0.5);
+	cursor: pointer;
+}
+
+#classsify .con
+{
+	margin-left: 10px;
+	display: none;
+}
+
+#classsify .con li
+{
+	line-height: 30px;
+	border-bottom: dashed  #F2A881 1px;
+}
+
+#classsify .con li a
+{
+	position: relative;
+	left: 0px;
+	margin-left: 10px;
+}
+
+#classsify .menu
+{
+	color: #777;
+	font-weight: bold;
+}
+
+#classsify .iconlist
+{
+	background-position: -396px -296px;
+	padding: 0px 10px;
+}
+
+#classsify .class_iocn
+{
+	display: block;
+	float: right;
+	border-width: 12px;
+	border-style: solid;
+	margin: -6px 6px 0px 0px;
+	border-color: transparent transparent #3D727E transparent ;
+}
+
+#classsify .class_iocnH
+{
+	border-color: #fff transparent transparent transparent ;
+	margin-top: 6px;
+}
+
+#classsify .studySource li
+{
+	width: 70px;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	float: left;
+	font-weight: bold;
+	background-color: rgba(255,155,33,0.8);
+	margin: 20px 0px 20px 16px;
+}
+
+#classsify .studySource li a
+{
+	font-size: 14px;
+	color: #fff;
+}
+
+@keyframes write{
+	from{
+		transform: rotateZ(0deg);
+	}
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+
+#classsify .studySource li:hover
+{
+	background-color: #FF6600;
+	animation: write 0.3s linear;
+}
+
+#page
+{
+	width: 900px;
+	margin-top: 30px;
+	position: relative;
+	left: 50%;
+	margin-left: -450px;
+}
+
+#page li
+{
+	width: 36px;
+	height: 36px;
+	text-align: center;
+	color: #337AB7;
+	line-height: 36px;
+	margin-left: 10px;
+	border: 1px solid #ccc;
+	float: left;
+	border-radius: 4px;
+}
+
+#page li a
+{
+	color: #337AB7;
+	font-size: 16px;
+}
+
+#page .current
+{
+	background-color: #337AB7;
+}
+
+#page .current a
+{
+	color: #fff;
+}
+
+#page .upPage
+{
+	width: 90px;
+}
+
+#page .downPage
+{
+	width: 90px;
+}
