@@ -1,4 +1,4 @@
-var Service = require('node-windows').Service;
+ var Service = require('node-windows').Service;
  
 var svc = new Service({
   name:'app1',
